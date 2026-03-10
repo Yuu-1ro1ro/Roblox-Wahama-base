@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>和浜駐屯地 | 公式ホームページ</title>
+  <style>
+    .brand-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #121b2d;
+      --panel: rgba(18, 27, 45, 0.78);
+      --panel-strong: rgba(9, 16, 29, 0.92);
+      --line: rgba(255,255,255,0.08);
+      --text: #edf3ff;
+      --muted: #a9b7d0;
+      --accent: #4da3ff;
+      --accent-2: #7cf2c9;
+      --danger: #ff6b6b;
+      --warning: #ffd166;
+      --shadow: 0 12px 30px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(77,163,255,0.18), transparent 24%),
+        radial-gradient(circle at 80% 10%, rgba(124,242,201,0.10), transparent 20%),
+        linear-gradient(180deg, #07101c 0%, #0b1220 50%, #08101b 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(5, 11, 21, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), #1a4f9b);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-text p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      font-size: 0.94rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+      border-color: var(--line);
+    }
+
+    .hero {
+      padding: 52px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(77,163,255,0.24), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(77,163,255,0.12);
+      color: #cfe4ff;
+      border: 1px solid rgba(77,163,255,0.2);
+      font-size: 0.86rem;
+      margin-bottom: 14px;
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p.lead {
+      margin: 18px 0 24px;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 1rem;
+      max-width: 58ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      transition: 0.2s ease;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #2b66d5);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    .status-panel {
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .status-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .status-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .status-chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      border: 1px solid rgba(124,242,201,0.2);
+      color: #d5fff2;
+      background: rgba(124,242,201,0.1);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .mini-stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+    }
+
+    .mini-stat .label {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 8px;
+    }
+
+    .mini-stat .value {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .ticker {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+    }
+
+    .ticker strong { font-size: 0.92rem; }
+    .ticker p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    main {
+      padding-bottom: 52px;
+    }
+
+    section.content-section {
+      padding: 14px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-header h3 {
+      margin: 0;
+      font-size: 1.7rem;
+    }
+
+    .section-header p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .panel h4 {
+      margin: 0 0 14px;
+      font-size: 1.14rem;
+    }
+
+    .panel p,
+    .panel li {
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .announce-list,
+    .rule-list,
+    .exam-list,
+    .dev-list,
+    .link-list,
+    .greeting-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card-item {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .card-item .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: #d8e6ff;
+    }
+
+    .tag.warn {
+      background: rgba(255,209,102,0.1);
+      color: #ffeab1;
+      border-color: rgba(255,209,102,0.18);
+    }
+
+    .tag.danger {
+      background: rgba(255,107,107,0.1);
+      color: #ffc4c4;
+      border-color: rgba(255,107,107,0.18);
+    }
+
+    .rank-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+    }
+
+    .rank-table th,
+    .rank-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .rank-table th {
+      color: #d8e6ff;
+      background: rgba(255,255,255,0.03);
+      font-size: 0.92rem;
+    }
+
+    .rank-table td {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .rank-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      transition: 0.2s ease;
+    }
+
+    .link-button:hover {
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-2px);
+    }
+
+    .link-button span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .progress-wrap {
+      display: grid;
+      gap: 14px;
+    }
+
+    .progress-item {
+      display: grid;
+      gap: 8px;
+    }
+
+    .progress-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 34px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(calc(100% - 20px), var(--max));
+      }
+
+      .hero-card,
+      .panel,
+      .status-panel {
+        padding: 18px;
+      }
+
+      .hero h2 {
+        font-size: 1.9rem;
+      }
+
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .rank-table th,
+      .rank-table td {
+        padding: 12px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge" id="brandBadge">
+  <img id="brandLogo" src="logo.png" alt="和浜駐屯地 ロゴ" />
+</div>
+        <div class="brand-text">
+          <h1 id="siteTitle">和浜駐屯地</h1>
+          <p id="siteSubtitle">ROBLOX プレース公式ホームページ</p>
+        </div>
+      </div>
+      <nav class="nav-links" id="navLinks"></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow" id="heroEyebrow">公式案内</div>
+          <h2 id="heroTitle">和浜駐屯地へようこそ。</h2>
+          <p class="lead" id="heroDescription"></p>
+          <div class="hero-actions" id="heroActions"></div>
+        </div>
+
+        <aside class="hero-card status-panel">
+          <div class="status-head">
+            <div class="status-title">駐屯地状況</div>
+            <div class="status-chip" id="statusChip">運用中</div>
+          </div>
+          <div class="mini-stats" id="miniStats"></div>
+          <div class="ticker">
+            <strong>本部メッセージ</strong>
+            <p id="tickerMessage"></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section" id="home">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h3>ホーム</h3>
+            <p>和浜駐屯地。</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <article class="panel">
+            <h4>概要</h4>
+            <p id="homeOverview"></p>
+          </article>
+          <article class="panel">
+            <h4>重要事項</h4>
+            <div class="greeting-list" id="homeHighlights"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="greeting">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h3>あいさつ</h3>
+            <p>管理側・運営側からのメッセージを掲載する欄です。</p>
+          </div>
+        </div>
+        <div class="grid-2" id="greetingCards"></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="announcements">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h3>アナウンス</h3>
+            <p>最新情報・開催情報・注意事項をここで告知します。</p>
+          </div>
+        </div>
+        <div class="announce-list" id="announcementList"></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="rules">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h3>規則</h3>
+            <p>参加者が守るべき基本ルールをまとめています。</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <article class="panel">
+            <h4>基本規則</h4>
+            <div class="rule-list" id="ruleList"></div>
+          </article>
+          <article class="panel">
+            <h4>違反時の対応</h4>
+            <p id="ruleNote"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="ranks">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h3>階級表</h3>
+            <p>組織内の階級と役割を一覧化しています。</p>
+          </div>
+        </div>
+        <article class="panel">
+          <div style="overflow-x:auto;">
+            <table class="rank-table">
+              <thead>
+                <tr>
+                  <th>区分</th>
+                  <th>階級名</th>
+                  <th>説明</th>
+                </tr>
+              </thead>
+              <tbody id="rankTableBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="development">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h3>開発状況</h3>
+            <p>マップ・UI・システムなどの進行状況を掲載します。</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <article class="panel">
+            <h4>進捗ゲージ</h4>
+            <div class="progress-wrap" id="developmentProgress"></div>
+          </article>
+          <article class="panel">
+            <h4>更新内容</h4>
+            <div class="dev-list" id="developmentList"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="exams">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h3>試験</h3>
+            <p>昇格試験・採用試験・部隊試験。</p>
+          </div>
+        </div>
+        <div class="exam-list" id="examList"></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="links">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h3>リンク</h3>
+            <p>プレース・コミュニティ・関連ページへの導線です。</p>
+          </div>
+        </div>
+        <div class="grid-3 link-list" id="linkList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div id="footerText">© 和浜駐屯地 Official Website</div>
+      <div id="footerSubtext">このサイトはファン制作・運営用の案内ページです。</div>
+    </div>
+  </footer>
+
+  <script>
+    /* =====================================================
+       ここを編集すれば、サイト内の内容を簡単に変更できます。
+       文字変更は基本的にこの SITE_DATA だけ触ればOKです。
+       ===================================================== */
+    const SITE_DATA = {
+      brandBadge: "WH",
+      siteTitle: "和浜駐屯地",
+      siteSubtitle: "ROBLOX プレースのホームページ",
+      footerText: "© 和浜駐屯地",
+      footerSubtext: "このサイトは案内・ホームページです。",
+
+      hero: {
+        eyebrow: "あいさつ",
+        title: "和浜駐屯地へようこそ。",
+        description:
+          "和浜駐屯地は、規律・連携・活動参加を重視したROBLOX内の駐屯地プレースです。本ページでは、階級制度、最新のお知らせ、規則、試験情報、開発状況、各種リンクをひと目で確認できます。初参加の方も、所属済みの方も、まずはこちらをご確認ください。",
+        statusChip: "製作中",
+        tickerMessage:
+          "イベント参加前には、必ず規則・試験・アナウンス欄をご確認ください。",
+        actions: [
+          { label: "アナウンスを見る", href: "#announcements", primary: true },
+          { label: "階級表を見る", href: "#ranks", primary: false },
+          { label: "リンクへ移動", href: "#links", primary: false }
+        ],
+        stats: [
+          { label: "現在状態", value: "製作中　プレース公開済み　公式公開は4月10日" },
+          { label: "訓練状況", value: "現在訓練無" },
+          { label: "募集状況", value: "隊員募集中" },
+          { label: "更新頻度", value: "サイト制作者が頑張れば" }
+        ]
+      },
+
+      navigation: [
+        { label: "ホーム", href: "#home" },
+        { label: "あいさつ", href: "#greeting" },
+        { label: "アナウンス", href: "#announcements" },
+        { label: "規則", href: "#rules" },
+        { label: "階級表", href: "#ranks" },
+        { label: "開発状況", href: "#development" },
+        { label: "試験", href: "#exams" },
+        { label: "リンク", href: "#links" }
+      ],
+
+      home: {
+        overview:
+          "本サイトは、和浜駐屯地に関する情報の案内ページです。新規隊員向けの導線、既存隊員向けの周知、イベント前の確認事項などを、掲載します。",
+        highlights: [
+          "活動する際は必ずアナウンスと規則、そして試験を確認してください。",
+          "階級に応じた役割と責任を理解し、活動してください。",
+          "試験は不定期で開催しております。"
+        ]
+      },
+
+      greetings: [
+        {
+          title: "駐屯地幹部より",
+          role: "上級幹部",
+          body:
+            "まだ聞いていません…"
+        },
+        {
+          title: "新規参加者の皆様へ",
+          role: "サイト作成者・連隊長",
+          body:
+            "和浜駐屯地にようこそ！！ 規則や、試験を見てからプレースの参加をしようね。"
+        }
+      ],
+
+      announcements: [
+        {
+          title: "公開",
+          date: "2026-04-10",
+          category: "重要",
+          level: "warn",
+          body: "この日は正式に開校する日ダ"
+        },
+        {
+          title: "訓練参加前の確認事項",
+          date: "2026-03-10",
+          category: "案内",
+          level: "normal",
+          body: "訓練は、集合時間・対象階級・どの試験かを必ず確認してください。"
+        },
+        {
+          title: "開発",
+          date: "2026-03-10",
+          category: "開発…",
+          level: "danger",
+          body: "現在めちゃくちゃ頑張って製作中。。。"
+        }
+      ],
+
+      rules: {
+        note:
+          "口頭注意 →口頭警告 → 最終警告 →投獄→ タイムBAN→ 永久BAN     悪質度でスキップされる場合あり。     1. RP事件として扱うべきか、荒らしとして排除すべきかは管理者が判断するものとする。",
+        items: [
+          "■ 基本規則",
+          "1.過度な迷惑行為の禁止",
+          " 暴言・スパム・つきまとい・迷惑行為・妨害行為、常識的な範囲内での言動から逸脱する言動などは禁止。",
+          "2.RP崩壊の禁止",
+          "明らかに設定を壊す行為（突然の超能力、関係ない世界観の武器やキャラ）は禁止。",
+          "3.指揮系統の尊重",
+          "上官の指示は必ず従う。RP上の階級に応じた行動をすること。",
+          "4.無許可のPvP禁止",
+          "訓練・不審者からの防衛・幹部から許可された時、CQB場での練習以外での勝手な攻撃・銃撃は禁止。",
+          "5.バグ、チート利用の禁止",
+          "6.権限の乱用の禁止",
+          "7.本規則は和浜駐屯地に所属する全ての隊員に適応される。",
+          "8.本規則は審議にて変更される場合がある。",
+          "■ ロールプレイ規則",
+          "1.武器の持ち歩き、発砲等は射撃場、CQB場、許可された時のみ",
+          "兵舎・食堂・駐屯地内での無駄な構え等は禁止。",
+          "2.車両は許可を取って運用",
+          "迷惑運転・基地内暴走は処罰対象。",
+          "■ 駐屯地内の行動規則",
+          "1.無断立入禁止区域",
+          "武器庫、赤線侵入などは幹部、許可者のみ。",
+          "2.一般市民RPキャラの侵入は禁止",
+          " イベントなど特例を除いて不可。"
+        ]
+      },
+
+      ranks: [
+        { category: "陸将", name: "陸将", description: "どうやってここまで…？" },
+        { category: "陸将", name: "陸将補", description: "最上級幹部の仲間入り…ここまで長かった…" },
+        { category: "陸佐", name: "一等陸佐", description: "上級幹部からもうすぐ卒業次は最上級幹部だ！" },
+        { category: "陸佐", name: "二等陸佐", description: "特になし" },
+        { category: "陸佐", name: "三等陸佐", description: "上級幹部の仲間入り。ここからは試験で昇級できません。" },
+        { category: "陸尉", name: "陸尉長", description: "中級幹部からもうすぐ卒業！お疲れ様！" },
+        { category: "陸尉", name: "一等陸尉", description: "まだまだ頑張ろう！" },
+        { category: "陸尉", name: "二等陸尉", description: "特になし" },
+        { category: "陸尉", name: "三等陸尉", description: "特になし" },
+        { category: "陸尉", name: "准陸尉", description: "中級幹部の仲間入り！中級幹部でも頑張って！" },
+        { category: "陸曹", name: "陸曹長", description: "中級幹部の仲間入りになるためにあと一個！" },
+        { category: "陸曹", name: "陸曹長補", description: "もうすぐ…陸曹長！" },
+        { category: "陸曹", name: "一等陸曹", description: "特になし" },
+        { category: "陸曹", name: "二等陸曹", description: "特になし" },
+        { category: "陸曹", name: "三等陸曹", description: "陸曹はいりたてほやほや" },
+        { category: "陸士", name: "陸士長", description: "あとちょっとで陸曹！がんばれー！" },
+        { category: "陸士", name: "陸士長補", description: "特になし" },
+        { category: "陸士", name: "一等陸士", description: "初めての昇格試験に合格。" },
+        { category: "陸士", name: "二等陸士", description: "採用試験を行った直後の階級。" },
+        { category: "陸士", name: "新入隊員", description: "グループに入りたて。" }
+      ],
+
+      development: {
+        progress: [
+          { name: "整備", percent: 70 },
+        ],
+        updates: [
+          "ラーメン屋を作ってみた",
+          "防衛省作成完了（建物）",
+          "寮も完成しました。"
+        ]
+      },
+
+      exams: [
+
+      ],
+
+      links: [
+        {
+          title: "ROBLOXプレース",
+          description: "和浜駐屯地のプレースはこちら。",
+          url: "https://www.roblox.com/ja/games/73205683924540/4-10"
+        },
+        {
+          title: "discordコミュニティサーバー",
+          description: "当サイトより更新が早いコミュニティ。",
+          url: "https://discord.gg/P4rmZVKkuC"
+        },
+        {
+          title: "グループページ",
+          description: "所属確認・役職。",
+          url: "https://www.roblox.com/ja/communities/1075592462/unnamed#!/about"
+        }
+      ]
+    };
+
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    function renderNavigation() {
+      const nav = document.getElementById("navLinks");
+      nav.innerHTML = SITE_DATA.navigation
+        .map(item => `<a href="${item.href}">${item.label}</a>`)
+        .join("");
+    }
+
+    function renderHero() {
+      setText("siteTitle", SITE_DATA.siteTitle);
+      setText("siteSubtitle", SITE_DATA.siteSubtitle);
+      setText("footerText", SITE_DATA.footerText);
+      setText("footerSubtext", SITE_DATA.footerSubtext);
+      setText("heroEyebrow", SITE_DATA.hero.eyebrow);
+      setText("heroTitle", SITE_DATA.hero.title);
+      setText("heroDescription", SITE_DATA.hero.description);
+      setText("statusChip", SITE_DATA.hero.statusChip);
+      setText("tickerMessage", SITE_DATA.hero.tickerMessage);
+
+      const actions = document.getElementById("heroActions");
+      actions.innerHTML = SITE_DATA.hero.actions
+        .map(btn => `
+          <a class="btn ${btn.primary ? "primary" : ""}" href="${btn.href}">${btn.label}</a>
+        `)
+        .join("");
+
+      const stats = document.getElementById("miniStats");
+      stats.innerHTML = SITE_DATA.hero.stats
+        .map(stat => `
+          <div class="mini-stat">
+            <div class="label">${stat.label}</div>
+            <div class="value">${stat.value}</div>
+          </div>
+        `)
+        .join("");
+    }
+
+    function renderHome() {
+      setText("homeOverview", SITE_DATA.home.overview);
+      const wrap = document.getElementById("homeHighlights");
+      wrap.innerHTML = SITE_DATA.home.highlights
+        .map(text => `<div class="card-item">${text}</div>`)
+        .join("");
+    }
+
+    function renderGreetings() {
+      const wrap = document.getElementById("greetingCards");
+      wrap.innerHTML = SITE_DATA.greetings
+        .map(item => `
+          <article class="panel">
+            <h4>${item.title}</h4>
+            <div class="tag">${item.role}</div>
+            <p>${item.body}</p>
+          </article>
+        `)
+        .join("");
+    }
+
+    function renderAnnouncements() {
+      const wrap = document.getElementById("announcementList");
+      wrap.innerHTML = SITE_DATA.announcements
+        .map(item => `
+          <article class="card-item">
+            <div class="meta">
+              <div class="tag ${item.level === "warn" ? "warn" : item.level === "danger" ? "danger" : ""}">${item.category}</div>
+              <div class="tag">${item.date}</div>
+            </div>
+            <h4>${item.title}</h4>
+            <p>${item.body}</p>
+          </article>
+        `)
+        .join("");
+    }
+
+    function renderRules() {
+      const wrap = document.getElementById("ruleList");
+      wrap.innerHTML = SITE_DATA.rules.items
+        .map(rule => `<div class="card-item">${rule}</div>`)
+        .join("");
+      setText("ruleNote", SITE_DATA.rules.note);
+    }
+
+    function renderRanks() {
+      const tbody = document.getElementById("rankTableBody");
+      tbody.innerHTML = SITE_DATA.ranks
+        .map(rank => `
+          <tr>
+            <td>${rank.category}</td>
+            <td>${rank.name}</td>
+            <td>${rank.description}</td>
+          </tr>
+        `)
+        .join("");
+    }
+
+    function renderDevelopment() {
+      const progress = document.getElementById("developmentProgress");
+      progress.innerHTML = SITE_DATA.development.progress
+        .map(item => `
+          <div class="progress-item">
+            <div class="progress-top">
+              <strong>${item.name}</strong>
+              <span>${item.percent}%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: ${item.percent}%;"></div>
+            </div>
+          </div>
+        `)
+        .join("");
+
+      const list = document.getElementById("developmentList");
+      list.innerHTML = SITE_DATA.development.updates
+        .map(text => `<div class="card-item">${text}</div>`)
+        .join("");
+    }
+
+    function renderExams() {
+      const wrap = document.getElementById("examList");
+      wrap.innerHTML = SITE_DATA.exams
+        .map(exam => `
+          <article class="card-item">
+            <div class="meta">
+              <div class="tag">対象: ${exam.target}</div>
+            </div>
+            <h4>${exam.title}</h4>
+            <p>${exam.content}</p>
+            <p><strong>備考：</strong>${exam.note}</p>
+          </article>
+        `)
+        .join("");
+    }
+
+    function renderLinks() {
+      const wrap = document.getElementById("linkList");
+      wrap.innerHTML = SITE_DATA.links
+        .map(link => `
+          <a class="link-button" href="${link.url}" target="_blank" rel="noopener noreferrer">
+            <div>
+              <strong>${link.title}</strong><br>
+              <span>${link.description}</span>
+            </div>
+            <div>↗</div>
+          </a>
+        `)
+        .join("");
+    }
+
+    renderNavigation();
+    renderHero();
+    renderHome();
+    renderGreetings();
+    renderAnnouncements();
+    renderRules();
+    renderRanks();
+    renderDevelopment();
+    renderExams();
+    renderLinks();
+  </script>
+</body>
+</html>
