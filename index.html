@@ -1492,6 +1492,20 @@
   </button>
 
   <script>
+      const SCROLL_KEY = "wahama-scroll-position";
+
+  function saveScrollPosition() {
+    sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
+  }
+
+  window.addEventListener("scroll", saveScrollPosition, { passive: true });
+
+  window.addEventListener("load", () => {
+    const savedY = sessionStorage.getItem(SCROLL_KEY);
+    if (savedY !== null) {
+      window.scrollTo(0, Number(savedY));
+    }
+  });
     const SITE_DATA = {
       siteTitle: "和浜駐屯地",
       siteSubtitle: "ROBLOX プレースのホームページ",
@@ -1955,9 +1969,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
