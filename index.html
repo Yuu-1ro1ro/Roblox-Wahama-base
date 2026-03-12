@@ -1397,6 +1397,19 @@
   </footer>
 
   <script>
+     if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  function forceTop() {
+    if (location.hash) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }
+
+  window.addEventListener("load", forceTop);
+  window.addEventListener("pageshow", forceTop);
     const SITE_DATA = {
       siteTitle: "和浜駐屯地",
       siteSubtitle: "ROBLOX プレースのホームページ",
@@ -1838,6 +1851,7 @@
   </script>
 </body>
 </html>
+
 
 
 
