@@ -1884,6 +1884,33 @@
     }
 
     function renderExams() {
+      async function loadExamsFromJson() {
+  try {
+    const response = await fetch("./exams.json", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(`exams.json の取得に失敗しました: ${response.status}`);
+    }
+
+    const exams = await response.json();
+
+    if (!Array.isArray(exams)) {
+      throw new Error("exams.json の形式が不正です。");
+    }
+
+    SITE_DATA.exams = exams;
+    renderExams();
+  } catch (error) {
+    console.error("試験情報の読み込みに失敗しました:", error);
+
+    const wrap = document.getElementById("examList");
+    if (wrap) {
+      wrap.innerHTML = `<div class="empty-box">試験情報の読み込みに失敗しました。</div>`;
+    }
+  }
+}
       const wrap = document.getElementById("examList");
 
       if (!SITE_DATA.exams.length) {
