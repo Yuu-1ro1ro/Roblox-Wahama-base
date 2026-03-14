@@ -1490,9 +1490,8 @@
       <path d="M6 11l6-6 6 6"></path>
     </svg>
   </button>
-
-  <script>
-      const SCROLL_KEY = "wahama-scroll-position";
+<script>
+  const SCROLL_KEY = "wahama-scroll-position";
 
   function saveScrollPosition() {
     sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
@@ -1506,492 +1505,501 @@
       window.scrollTo(0, Number(savedY));
     }
   });
-    const SITE_DATA = {
-      siteTitle: "和浜駐屯地",
-      siteSubtitle: "ROBLOX プレースのホームページ",
-      footerText: "© 和浜駐屯地",
-      footerSubtext: "このサイトは案内・ホームページです。",
-      utilityMessage: "現在試験なし。",
 
-      hero: {
-        eyebrow: "welcome・ようこそ",
-        title: "和浜駐屯地へようこそ。",
-        description:
-          "和浜駐屯地は、規律・連携・活動参加を重視したROBLOX内の駐屯地プレースです。本ページでは、階級制度、最新のお知らせ、規則、試験情報、開発状況、各種リンクをひと目で確認できます。初参加の方も、所属済みの方も、まずはこちらをご確認ください。",
-        statusChip: "製作中",
-        tickerMessage:
-          "イベント参加前には、必ず規則・試験・アナウンス欄をご確認ください。",
-        image: {
-          src: "hero-main.jpg",
-          alt: "和浜駐屯地 メイン画像"
-        },
-        actions: [
-          { label: "アナウンスを見る", href: "#announcements", primary: true },
-          { label: "階級表を見る", href: "#ranks", primary: false },
-          { label: "リンクへ移動", href: "#links", primary: false }
-        ],
-        stats: [
-          { label: "現在状態", value: "製作中　プレース公開済み　公式公開は4月10日" },
-          { label: "訓練状況", value: "現在訓練無" },
-          { label: "募集状況", value: "隊員募集中" },
-          { label: "更新頻度", value: "サイト制作者が頑張れば" }
-        ]
+  const SITE_DATA = {
+    siteTitle: "和浜駐屯地",
+    siteSubtitle: "ROBLOX プレースのホームページ",
+    footerText: "© 和浜駐屯地",
+    footerSubtext: "このサイトは案内・ホームページです。",
+    utilityMessage: "現在試験なし",
+
+    hero: {
+      eyebrow: "welcome・ようこそ",
+      title: "和浜駐屯地へようこそ。",
+      description:
+        "和浜駐屯地は、規律・連携・活動参加を重視したROBLOX内の駐屯地プレースです。本ページでは、階級制度、最新のお知らせ、規則、試験情報、開発状況、各種リンクをひと目で確認できます。初参加の方も、所属済みの方も、まずはこちらをご確認ください。",
+      statusChip: "製作中",
+      tickerMessage:
+        "イベント参加前には、必ず規則・試験・アナウンス欄をご確認ください。",
+      image: {
+        src: "hero-main.jpg",
+        alt: "和浜駐屯地 メイン画像"
       },
-
-      navigation: [
-        { label: "ホーム", href: "#home" },
-        { label: "あいさつ", href: "#greeting" },
-        { label: "アナウンス", href: "#announcements" },
-        { label: "規則", href: "#rules" },
-        { label: "階級表", href: "#ranks" },
-        { label: "開発状況", href: "#development" },
-        { label: "試験", href: "#exams" },
-        { label: "活動写真", href: "#gallery" },
-        { label: "リンク", href: "#links" }
+      actions: [
+        { label: "アナウンスを見る", href: "#announcements", primary: true },
+        { label: "階級表を見る", href: "#ranks", primary: false },
+        { label: "リンクへ移動", href: "#links", primary: false }
       ],
-
-      pickupImages: [
-        {
-          title: "駐屯地 寮",
-          text: "洗練されたデザイン。",
-          src: "pickup-1.jpg",
-          alt: "駐屯地外観"
-        },
-        {
-          title: "防衛省",
-          text: "運営サイド",
-          src: "pickup-2.jpg",
-          alt: "訓練風景"
-        },
-        {
-          title: "演説場",
-          text: "重大なことなどを伝える場",
-          src: "pickup-3.jpg",
-          alt: "庁舎・設備紹介"
-        }
-      ],
-
-      home: {
-        overview:
-          "本サイトは、和浜駐屯地に関する情報の案内ページです。新規隊員向けの導線、既存隊員向けの周知、イベント前の確認事項などを、掲載します。",
-        highlights: [
-          "活動する際は必ずアナウンスと規則、そして試験を確認してください。",
-          "階級に応じた役割と責任を理解し、活動してください。",
-          "試験は不定期で開催しております。"
-        ]
-      },
-
-      greetings: [
-        {
-          title: "駐屯地幹部より",
-          role: "上級幹部",
-          body: "まだ聞いていません…"
-        },
-        {
-          title: "新規参加者の皆様へ",
-          role: "サイト作成者・連隊長",
-          body: "和浜駐屯地にようこそ！！ 規則や、試験を見てからプレースの参加をしようね。"
-        }
-      ],
-
-      announcements: [
-        {
-          title: "公開",
-          date: "2026-04-10",
-          category: "重要",
-          level: "warn",
-          body: "この日は正式に開校する日ダ"
-        },
-        {
-          title: "訓練参加前の確認事項",
-          date: "2026-03-10",
-          category: "案内",
-          level: "normal",
-          body: "訓練は、集合時間・対象階級・どの試験かを必ず確認してください。"
-        },
-        {
-          title: "開発",
-          date: "2026-03-10",
-          category: "開発…",
-          level: "danger",
-          body: "現在めちゃくちゃ頑張って製作中。。。"
-        }
-      ],
-
-      rules: {
-        note:
-          "口頭注意 →口頭警告 → 最終警告 →投獄→ タイムBAN→ 永久BAN     悪質度でスキップされる場合あり。     1. RP事件として扱うべきか、荒らしとして排除すべきかは管理者が判断するものとする。",
-        items: [
-          "■ 基本規則",
-          "1.過度な迷惑行為の禁止",
-          " 暴言・スパム・つきまとい・迷惑行為・妨害行為、常識的な範囲内での言動から逸脱する言動などは禁止。",
-          "2.RP崩壊の禁止",
-          "明らかに設定を壊す行為（突然の超能力、関係ない世界観の武器やキャラ）は禁止。",
-          "3.指揮系統の尊重",
-          "上官の指示は必ず従う。RP上の階級に応じた行動をすること。",
-          "4.無許可のPvP禁止",
-          "訓練・不審者からの防衛・幹部から許可された時、CQB場での練習以外での勝手な攻撃・銃撃は禁止。",
-          "5.バグ、チート利用の禁止",
-          "6.権限の乱用の禁止",
-          "7.本規則は和浜駐屯地に所属する全ての隊員に適応される。",
-          "8.本規則は審議にて変更される場合がある。",
-          "■ ロールプレイ規則",
-          "1.自分の役職に応じた行動をすること",
-          "例：新隊員が勝手に戦車を動かしたり、一般隊員が指揮官RPをするのは禁止。",
-          "2.リアル系RPを推奨",
-          "2.むだに暴れ回らず、実際の駐屯地を意識した行動を心がける。",
-          "■ 武器・車両規則",
-          "1.武器の持ち歩き、発砲等は射撃場、CQB場、許可された時のみ",
-          "兵舎・食堂・駐屯地内での無駄な構え等は禁止。",
-          "2.車両は許可を取って運用",
-          "迷惑運転・基地内暴走は処罰対象。",
-          "■ 駐屯地内の行動規則",
-          "1.無断立入禁止区域",
-          "武器庫、赤線侵入などは幹部、許可者のみ。",
-          "2.一般市民RPキャラの侵入は禁止",
-          " イベントなど特例を除いて不可。"
-        ]
-      },
-
-      ranks: [
-        { category: "陸将", name: "陸将", description: "どうやってここまで…？" },
-        { category: "陸将", name: "陸将補", description: "最上級幹部の仲間入り…ここまで長かった…" },
-        { category: "陸佐", name: "一等陸佐", description: "上級幹部からもうすぐ卒業次は最上級幹部だ！" },
-        { category: "陸佐", name: "二等陸佐", description: "特になし" },
-        { category: "陸佐", name: "三等陸佐", description: "上級幹部の仲間入り。ここからは試験で昇級できません。" },
-        { category: "陸尉", name: "陸尉長", description: "中級幹部からもうすぐ卒業！お疲れ様！" },
-        { category: "陸尉", name: "一等陸尉", description: "まだまだ頑張ろう！" },
-        { category: "陸尉", name: "二等陸尉", description: "特になし" },
-        { category: "陸尉", name: "三等陸尉", description: "特になし" },
-        { category: "陸尉", name: "准陸尉", description: "中級幹部の仲間入り！中級幹部でも頑張って！" },
-        { category: "陸曹", name: "陸曹長", description: "中級幹部の仲間入りになるためにあと一個！" },
-        { category: "陸曹", name: "陸曹長補", description: "もうすぐ…陸曹長！" },
-        { category: "陸曹", name: "一等陸曹", description: "特になし" },
-        { category: "陸曹", name: "二等陸曹", description: "特になし" },
-        { category: "陸曹", name: "三等陸曹", description: "陸曹はいりたてほやほや" },
-        { category: "陸士", name: "陸士長", description: "あとちょっとで陸曹！がんばれー！" },
-        { category: "陸士", name: "陸士長補", description: "特になし" },
-        { category: "陸士", name: "一等陸士", description: "初めての昇格試験に合格。" },
-        { category: "陸士", name: "二等陸士", description: "採用試験を行った直後の階級。" },
-        { category: "陸士", name: "新入隊員", description: "グループに入りたて。" }
-      ],
-
-      development: {
-        progress: [
-          { name: "整備", percent: 70 }
-        ],
-        updates: [
-          "ラーメン屋を作ってみた",
-          "防衛省作成完了（建物）",
-          "寮も完成しました。"
-        ]
-      },
-
-      exams: [],
-
-      gallery: [
-        { src: "gallery-1.jpg", alt: "活動写真1", caption: "活動風景" }
-      ],
-
-      links: [
-        {
-          title: "ROBLOXプレース",
-          description: "和浜駐屯地のプレースはこちら。",
-          url: "https://www.roblox.com/ja/games/73205683924540/4-10"
-        },
-        {
-          title: "discordコミュニティサーバー",
-          description: "当サイトより更新が早いコミュニティ。",
-          url: "https://discord.gg/P4rmZVKkuC"
-        },
-        {
-          title: "グループページ",
-          description: "所属確認・役職。",
-          url: "https://www.roblox.com/ja/communities/1075592462/unnamed#!/about"
-        }
+      stats: [
+        { label: "現在状態", value: "製作中　プレース公開済み　公式公開は4月10日" },
+        { label: "訓練状況", value: "現在訓練無" },
+        { label: "募集状況", value: "隊員募集中" },
+        { label: "更新頻度", value: "サイト制作者が頑張れば" }
       ]
-    };
+    },
 
-    function setText(id, value) {
-      const el = document.getElementById(id);
-      if (el) el.textContent = value;
-    }
+    navigation: [
+      { label: "ホーム", href: "#home" },
+      { label: "あいさつ", href: "#greeting" },
+      { label: "アナウンス", href: "#announcements" },
+      { label: "規則", href: "#rules" },
+      { label: "階級表", href: "#ranks" },
+      { label: "開発状況", href: "#development" },
+      { label: "試験", href: "#exams" },
+      { label: "活動写真", href: "#gallery" },
+      { label: "リンク", href: "#links" }
+    ],
 
-    function setImage(id, src, alt) {
-      const el = document.getElementById(id);
-      if (el) {
-        el.src = src;
-        el.alt = alt || "";
+    pickupImages: [
+      {
+        title: "駐屯地 寮",
+        text: "洗練されたデザイン。",
+        src: "pickup-1.jpg",
+        alt: "駐屯地外観"
+      },
+      {
+        title: "防衛省",
+        text: "運営サイド",
+        src: "pickup-2.jpg",
+        alt: "訓練風景"
+      },
+      {
+        title: "演説場",
+        text: "重大なことなどを伝える場",
+        src: "pickup-3.jpg",
+        alt: "庁舎・設備紹介"
       }
-    }
+    ],
 
-    function escapeHtml(text) {
-      return String(text)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
+    home: {
+      overview:
+        "本サイトは、和浜駐屯地に関する情報の案内ページです。新規隊員向けの導線、既存隊員向けの周知、イベント前の確認事項などを、掲載します。",
+      highlights: [
+        "活動する際は必ずアナウンスと規則、そして試験を確認してください。",
+        "階級に応じた役割と責任を理解し、活動してください。",
+        "試験は不定期で開催しております。"
+      ]
+    },
 
-    function renderNavigation() {
-      const nav = document.getElementById("navLinks");
-      nav.innerHTML = SITE_DATA.navigation
-        .map(item => `<a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`)
-        .join("");
-    }
+    greetings: [
+      {
+        title: "駐屯地幹部より",
+        role: "上級幹部",
+        body: "まだ聞いていません…"
+      },
+      {
+        title: "新規参加者の皆様へ",
+        role: "サイト作成者・連隊長",
+        body: "和浜駐屯地にようこそ！！ 規則や、試験を見てからプレースの参加をしようね。"
+      }
+    ],
 
-    function renderStats(targetId, stats) {
-      const statsWrap = document.getElementById(targetId);
-      if (!statsWrap) return;
+    announcements: [
+      {
+        title: "公開",
+        date: "2026-04-10",
+        category: "重要",
+        level: "warn",
+        body: "この日は正式に開校する日ダ"
+      },
+      {
+        title: "訓練参加前の確認事項",
+        date: "2026-03-10",
+        category: "案内",
+        level: "normal",
+        body: "訓練は、集合時間・対象階級・どの試験かを必ず確認してください。"
+      },
+      {
+        title: "開発",
+        date: "2026-03-10",
+        category: "開発…",
+        level: "danger",
+        body: "現在めちゃくちゃ頑張って製作中。。。"
+      }
+    ],
 
-      statsWrap.innerHTML = stats
-        .map(stat => `
-          <div class="mini-stat">
-            <div class="label">${escapeHtml(stat.label)}</div>
-            <div class="value">${escapeHtml(stat.value)}</div>
-          </div>
-        `)
-        .join("");
-    }
+    rules: {
+      note:
+        "口頭注意 →口頭警告 → 最終警告 →投獄→ タイムBAN→ 永久BAN     悪質度でスキップされる場合あり。     1. RP事件として扱うべきか、荒らしとして排除すべきかは管理者が判断するものとする。",
+      items: [
+        "■ 基本規則",
+        "1.過度な迷惑行為の禁止",
+        " 暴言・スパム・つきまとい・迷惑行為・妨害行為、常識的な範囲内での言動から逸脱する言動などは禁止。",
+        "2.RP崩壊の禁止",
+        "明らかに設定を壊す行為（突然の超能力、関係ない世界観の武器やキャラ）は禁止。",
+        "3.指揮系統の尊重",
+        "上官の指示は必ず従う。RP上の階級に応じた行動をすること。",
+        "4.無許可のPvP禁止",
+        "訓練・不審者からの防衛・幹部から許可された時、CQB場での練習以外での勝手な攻撃・銃撃は禁止。",
+        "5.バグ、チート利用の禁止",
+        "6.権限の乱用の禁止",
+        "7.本規則は和浜駐屯地に所属する全ての隊員に適応される。",
+        "8.本規則は審議にて変更される場合がある。",
+        "■ ロールプレイ規則",
+        "1.自分の役職に応じた行動をすること",
+        "例：新隊員が勝手に戦車を動かしたり、一般隊員が指揮官RPをするのは禁止。",
+        "2.リアル系RPを推奨",
+        "2.むだに暴れ回らず、実際の駐屯地を意識した行動を心がける。",
+        "■ 武器・車両規則",
+        "1.武器の持ち歩き、発砲等は射撃場、CQB場、許可された時のみ",
+        "兵舎・食堂・駐屯地内での無駄な構え等は禁止。",
+        "2.車両は許可を取って運用",
+        "迷惑運転・基地内暴走は処罰対象。",
+        "■ 駐屯地内の行動規則",
+        "1.無断立入禁止区域",
+        "武器庫、赤線侵入などは幹部、許可者のみ。",
+        "2.一般市民RPキャラの侵入は禁止",
+        " イベントなど特例を除いて不可。"
+      ]
+    },
 
-    function renderHero() {
-      setText("siteTitle", SITE_DATA.siteTitle);
-      setText("siteSubtitle", SITE_DATA.siteSubtitle);
-      setText("footerText", SITE_DATA.footerText);
-      setText("footerSubtext", SITE_DATA.footerSubtext);
-      setText("utilityMessage", SITE_DATA.utilityMessage);
-      setText("heroEyebrow", SITE_DATA.hero.eyebrow);
-      setText("heroTitle", SITE_DATA.hero.title);
-      setText("heroDescription", SITE_DATA.hero.description);
-      setText("statusChip", SITE_DATA.hero.statusChip);
-      setText("statusChipClone", SITE_DATA.hero.statusChip);
-      setText("tickerMessage", SITE_DATA.hero.tickerMessage);
-      setText("tickerMessageClone", SITE_DATA.hero.tickerMessage);
+    ranks: [
+      { category: "陸将", name: "陸将", description: "どうやってここまで…？" },
+      { category: "陸将", name: "陸将補", description: "最上級幹部の仲間入り…ここまで長かった…" },
+      { category: "陸佐", name: "一等陸佐", description: "上級幹部からもうすぐ卒業次は最上級幹部だ！" },
+      { category: "陸佐", name: "二等陸佐", description: "特になし" },
+      { category: "陸佐", name: "三等陸佐", description: "上級幹部の仲間入り。ここからは試験で昇級できません。" },
+      { category: "陸尉", name: "陸尉長", description: "中級幹部からもうすぐ卒業！お疲れ様！" },
+      { category: "陸尉", name: "一等陸尉", description: "まだまだ頑張ろう！" },
+      { category: "陸尉", name: "二等陸尉", description: "特になし" },
+      { category: "陸尉", name: "三等陸尉", description: "特になし" },
+      { category: "陸尉", name: "准陸尉", description: "中級幹部の仲間入り！中級幹部でも頑張って！" },
+      { category: "陸曹", name: "陸曹長", description: "中級幹部の仲間入りになるためにあと一個！" },
+      { category: "陸曹", name: "陸曹長補", description: "もうすぐ…陸曹長！" },
+      { category: "陸曹", name: "一等陸曹", description: "特になし" },
+      { category: "陸曹", name: "二等陸曹", description: "特になし" },
+      { category: "陸曹", name: "三等陸曹", description: "陸曹はいりたてほやほや" },
+      { category: "陸士", name: "陸士長", description: "あとちょっとで陸曹！がんばれー！" },
+      { category: "陸士", name: "陸士長補", description: "特になし" },
+      { category: "陸士", name: "一等陸士", description: "初めての昇格試験に合格。" },
+      { category: "陸士", name: "二等陸士", description: "採用試験を行った直後の階級。" },
+      { category: "陸士", name: "新入隊員", description: "グループに入りたて。" }
+    ],
 
-      setImage("heroImage", SITE_DATA.hero.image.src, SITE_DATA.hero.image.alt);
-      setImage("brandLogo", "logo.png", "和浜駐屯地 ロゴ");
+    development: {
+      progress: [
+        { name: "整備", percent: 70 }
+      ],
+      updates: [
+        "ラーメン屋を作ってみた",
+        "防衛省作成完了（建物）",
+        "寮も完成しました。"
+      ]
+    },
 
-      const actions = document.getElementById("heroActions");
-      actions.innerHTML = SITE_DATA.hero.actions
-        .map(btn => `
-          <a class="btn ${btn.primary ? "primary" : ""}" href="${escapeHtml(btn.href)}">
-            ${escapeHtml(btn.label)}
-          </a>
-        `)
-        .join("");
+    exams: [],
 
-      renderStats("miniStats", SITE_DATA.hero.stats);
-      renderStats("miniStatsClone", SITE_DATA.hero.stats);
-    }
+    gallery: [
+      { src: "gallery-1.jpg", alt: "活動写真1", caption: "活動風景" }
+    ],
 
-    function renderPickup() {
-      const wrap = document.getElementById("pickupGrid");
-      wrap.innerHTML = SITE_DATA.pickupImages
-        .map(item => `
-          <article class="image-card">
-            <img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}">
-            <div class="image-card-body">
-              <h4>${escapeHtml(item.title)}</h4>
-              <p>${escapeHtml(item.text)}</p>
-            </div>
-          </article>
-        `)
-        .join("");
-    }
+    links: [
+      {
+        title: "ROBLOXプレース",
+        description: "和浜駐屯地のプレースはこちら。",
+        url: "https://www.roblox.com/ja/games/73205683924540/4-10"
+      },
+      {
+        title: "discordコミュニティサーバー",
+        description: "当サイトより更新が早いコミュニティ。",
+        url: "https://discord.gg/P4rmZVKkuC"
+      },
+      {
+        title: "グループページ",
+        description: "所属確認・役職。",
+        url: "https://www.roblox.com/ja/communities/1075592462/unnamed#!/about"
+      }
+    ]
+  };
 
-    function renderHome() {
-      setText("homeOverview", SITE_DATA.home.overview);
-      const wrap = document.getElementById("homeHighlights");
-      wrap.innerHTML = SITE_DATA.home.highlights
-        .map(text => `<div class="card-item">${escapeHtml(text)}</div>`)
-        .join("");
-    }
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
 
-    function renderGreetings() {
-      const wrap = document.getElementById("greetingCards");
-      wrap.innerHTML = SITE_DATA.greetings
-        .map(item => `
-          <article class="panel">
-            <h4>${escapeHtml(item.title)}</h4>
-            <div class="tag">${escapeHtml(item.role)}</div>
-            <p style="margin-top:12px;">${escapeHtml(item.body)}</p>
-          </article>
-        `)
-        .join("");
-    }
-
-    function renderAnnouncements() {
-      const wrap = document.getElementById("announcementList");
-      wrap.innerHTML = SITE_DATA.announcements
-        .map(item => `
-          <article class="card-item">
-            <div class="meta">
-              <div class="tag ${item.level === "warn" ? "warn" : item.level === "danger" ? "danger" : ""}">
-                ${escapeHtml(item.category)}
-              </div>
-              <div class="tag">${escapeHtml(item.date)}</div>
-            </div>
-            <h4>${escapeHtml(item.title)}</h4>
-            <p>${escapeHtml(item.body)}</p>
-          </article>
-        `)
-        .join("");
-    }
-
-    function renderRules() {
-      const wrap = document.getElementById("ruleList");
-      wrap.innerHTML = SITE_DATA.rules.items
-        .map(rule => `<div class="card-item">${escapeHtml(rule)}</div>`)
-        .join("");
-      setText("ruleNote", SITE_DATA.rules.note);
-    }
-
-    function renderRanks() {
-      const tbody = document.getElementById("rankTableBody");
-      tbody.innerHTML = SITE_DATA.ranks
-        .map(rank => `
-          <tr>
-            <td>${escapeHtml(rank.category)}</td>
-            <td>${escapeHtml(rank.name)}</td>
-            <td>${escapeHtml(rank.description)}</td>
-          </tr>
-        `)
-        .join("");
-    }
-
-    function renderDevelopment() {
-      const progress = document.getElementById("developmentProgress");
-      progress.innerHTML = SITE_DATA.development.progress
-        .map(item => `
-          <div class="progress-item">
-            <div class="progress-top">
-              <strong>${escapeHtml(item.name)}</strong>
-              <span>${escapeHtml(item.percent)}%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:${Math.max(0, Math.min(100, Number(item.percent) || 0))}%"></div>
-            </div>
-          </div>
-        `)
-        .join("");
-
-      const list = document.getElementById("developmentList");
-      list.innerHTML = SITE_DATA.development.updates
-        .map(text => `<div class="card-item">${escapeHtml(text)}</div>`)
-        .join("");
-    }
-
-    function renderExams() {
-      async function loadExamsFromJson() {
-  try {
-    const response = await fetch("./exams.json", {
-      cache: "no-store"
-    });
-
-    if (!response.ok) {
-      throw new Error(`exams.json の取得に失敗しました: ${response.status}`);
-    }
-
-    const exams = await response.json();
-
-    if (!Array.isArray(exams)) {
-      throw new Error("exams.json の形式が不正です。");
-    }
-
-    SITE_DATA.exams = exams;
-    loadExamsFromJson();
-  } catch (error) {
-    console.error("試験情報の読み込みに失敗しました:", error);
-
-    const wrap = document.getElementById("examList");
-    if (wrap) {
-      wrap.innerHTML = `<div class="empty-box">試験情報の読み込みに失敗しました。</div>`;
+  function setImage(id, src, alt) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.src = src;
+      el.alt = alt || "";
     }
   }
-}
-      const wrap = document.getElementById("examList");
 
-      if (!SITE_DATA.exams.length) {
-        wrap.innerHTML = `<div class="empty-box">現在掲載されている試験情報はありません。</div>`;
-        return;
-      }
+  function escapeHtml(text) {
+    return String(text)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
 
-      wrap.innerHTML = SITE_DATA.exams
-        .map(exam => `
-          <article class="card-item">
-            <div class="meta">
-              <div class="tag">対象: ${escapeHtml(exam.target)}</div>
-            </div>
-            <h4>${escapeHtml(exam.title)}</h4>
-            <p>${escapeHtml(exam.content)}</p>
-            <p style="margin-top:8px;"><strong>備考：</strong>${escapeHtml(exam.note)}</p>
-          </article>
-        `)
-        .join("");
-    }
+  function syncExamStatus() {
+    const hasExams = Array.isArray(SITE_DATA.exams) && SITE_DATA.exams.length > 0;
+    setText("utilityMessage", hasExams ? "現在試験あり" : "現在試験なし");
+  }
 
-    function renderGallery() {
-      const wrap = document.getElementById("galleryGrid");
-      wrap.innerHTML = SITE_DATA.gallery
-        .map(item => `
-          <figure class="gallery-item">
-            <img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}">
-            <figcaption class="gallery-caption">${escapeHtml(item.caption)}</figcaption>
-          </figure>
-        `)
-        .join("");
-    }
-
-    function renderLinks() {
-      const wrap = document.getElementById("linkList");
-      wrap.innerHTML = SITE_DATA.links
-        .map(link => `
-          <a class="link-button" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">
-            <div>
-              <strong>${escapeHtml(link.title)}</strong><br>
-              <span>${escapeHtml(link.description)}</span>
-            </div>
-            <div aria-hidden="true">↗</div>
-          </a>
-        `)
-        .join("");
-    }
-
-    renderNavigation();
-    renderHero();
-    renderPickup();
-    renderHome();
-    renderGreetings();
-    renderAnnouncements();
-    renderRules();
-    renderRanks();
-    renderDevelopment();
-    renderExams();
-    renderGallery();
-    renderLinks();
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-    function toggleScrollTopButton() {
-      if (!scrollTopBtn) return;
-      if (window.scrollY > 260) {
-        scrollTopBtn.classList.add("show");
-      } else {
-        scrollTopBtn.classList.remove("show");
-      }
-    }
-
-    if (scrollTopBtn) {
-      scrollTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
+  async function loadExamsFromJson() {
+    try {
+      const response = await fetch("./exams.json", {
+        cache: "no-store"
       });
+
+      if (!response.ok) {
+        throw new Error(`exams.json の取得に失敗しました: ${response.status}`);
+      }
+
+      const exams = await response.json();
+
+      if (!Array.isArray(exams)) {
+        throw new Error("exams.json の形式が不正です。");
+      }
+
+      SITE_DATA.exams = exams;
+      renderExams();
+    } catch (error) {
+      console.error("試験情報の読み込みに失敗しました:", error);
+      SITE_DATA.exams = [];
+      renderExams();
+    }
+  }
+
+  function renderNavigation() {
+    const nav = document.getElementById("navLinks");
+    nav.innerHTML = SITE_DATA.navigation
+      .map(item => `<a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`)
+      .join("");
+  }
+
+  function renderStats(targetId, stats) {
+    const statsWrap = document.getElementById(targetId);
+    if (!statsWrap) return;
+
+    statsWrap.innerHTML = stats
+      .map(stat => `
+        <div class="mini-stat">
+          <div class="label">${escapeHtml(stat.label)}</div>
+          <div class="value">${escapeHtml(stat.value)}</div>
+        </div>
+      `)
+      .join("");
+  }
+
+  function renderHero() {
+    setText("siteTitle", SITE_DATA.siteTitle);
+    setText("siteSubtitle", SITE_DATA.siteSubtitle);
+    setText("footerText", SITE_DATA.footerText);
+    setText("footerSubtext", SITE_DATA.footerSubtext);
+    setText("utilityMessage", SITE_DATA.utilityMessage);
+    setText("heroEyebrow", SITE_DATA.hero.eyebrow);
+    setText("heroTitle", SITE_DATA.hero.title);
+    setText("heroDescription", SITE_DATA.hero.description);
+    setText("statusChip", SITE_DATA.hero.statusChip);
+    setText("statusChipClone", SITE_DATA.hero.statusChip);
+    setText("tickerMessage", SITE_DATA.hero.tickerMessage);
+    setText("tickerMessageClone", SITE_DATA.hero.tickerMessage);
+
+    setImage("heroImage", SITE_DATA.hero.image.src, SITE_DATA.hero.image.alt);
+    setImage("brandLogo", "logo.png", "和浜駐屯地 ロゴ");
+
+    const actions = document.getElementById("heroActions");
+    actions.innerHTML = SITE_DATA.hero.actions
+      .map(btn => `
+        <a class="btn ${btn.primary ? "primary" : ""}" href="${escapeHtml(btn.href)}">
+          ${escapeHtml(btn.label)}
+        </a>
+      `)
+      .join("");
+
+    renderStats("miniStats", SITE_DATA.hero.stats);
+    renderStats("miniStatsClone", SITE_DATA.hero.stats);
+  }
+
+  function renderPickup() {
+    const wrap = document.getElementById("pickupGrid");
+    wrap.innerHTML = SITE_DATA.pickupImages
+      .map(item => `
+        <article class="image-card">
+          <img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}">
+          <div class="image-card-body">
+            <h4>${escapeHtml(item.title)}</h4>
+            <p>${escapeHtml(item.text)}</p>
+          </div>
+        </article>
+      `)
+      .join("");
+  }
+
+  function renderHome() {
+    setText("homeOverview", SITE_DATA.home.overview);
+    const wrap = document.getElementById("homeHighlights");
+    wrap.innerHTML = SITE_DATA.home.highlights
+      .map(text => `<div class="card-item">${escapeHtml(text)}</div>`)
+      .join("");
+  }
+
+  function renderGreetings() {
+    const wrap = document.getElementById("greetingCards");
+    wrap.innerHTML = SITE_DATA.greetings
+      .map(item => `
+        <article class="panel">
+          <h4>${escapeHtml(item.title)}</h4>
+          <div class="tag">${escapeHtml(item.role)}</div>
+          <p style="margin-top:12px;">${escapeHtml(item.body)}</p>
+        </article>
+      `)
+      .join("");
+  }
+
+  function renderAnnouncements() {
+    const wrap = document.getElementById("announcementList");
+    wrap.innerHTML = SITE_DATA.announcements
+      .map(item => `
+        <article class="card-item">
+          <div class="meta">
+            <div class="tag ${item.level === "warn" ? "warn" : item.level === "danger" ? "danger" : ""}">
+              ${escapeHtml(item.category)}
+            </div>
+            <div class="tag">${escapeHtml(item.date)}</div>
+          </div>
+          <h4>${escapeHtml(item.title)}</h4>
+          <p>${escapeHtml(item.body)}</p>
+        </article>
+      `)
+      .join("");
+  }
+
+  function renderRules() {
+    const wrap = document.getElementById("ruleList");
+    wrap.innerHTML = SITE_DATA.rules.items
+      .map(rule => `<div class="card-item">${escapeHtml(rule)}</div>`)
+      .join("");
+    setText("ruleNote", SITE_DATA.rules.note);
+  }
+
+  function renderRanks() {
+    const tbody = document.getElementById("rankTableBody");
+    tbody.innerHTML = SITE_DATA.ranks
+      .map(rank => `
+        <tr>
+          <td>${escapeHtml(rank.category)}</td>
+          <td>${escapeHtml(rank.name)}</td>
+          <td>${escapeHtml(rank.description)}</td>
+        </tr>
+      `)
+      .join("");
+  }
+
+  function renderDevelopment() {
+    const progress = document.getElementById("developmentProgress");
+    progress.innerHTML = SITE_DATA.development.progress
+      .map(item => `
+        <div class="progress-item">
+          <div class="progress-top">
+            <strong>${escapeHtml(item.name)}</strong>
+            <span>${escapeHtml(item.percent)}%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:${Math.max(0, Math.min(100, Number(item.percent) || 0))}%"></div>
+          </div>
+        </div>
+      `)
+      .join("");
+
+    const list = document.getElementById("developmentList");
+    list.innerHTML = SITE_DATA.development.updates
+      .map(text => `<div class="card-item">${escapeHtml(text)}</div>`)
+      .join("");
+  }
+
+  function renderExams() {
+    const wrap = document.getElementById("examList");
+    if (!wrap) return;
+
+    if (!Array.isArray(SITE_DATA.exams) || SITE_DATA.exams.length === 0) {
+      wrap.innerHTML = `<div class="empty-box">現在掲載されている試験情報はありません。</div>`;
+      syncExamStatus();
+      return;
     }
 
-    window.addEventListener("scroll", toggleScrollTopButton, { passive: true });
-    toggleScrollTopButton();
-  </script>
+    wrap.innerHTML = SITE_DATA.exams
+      .map(exam => `
+        <article class="card-item">
+          <div class="meta">
+            <div class="tag">対象: ${escapeHtml(exam.target)}</div>
+          </div>
+          <h4>${escapeHtml(exam.title)}</h4>
+          <p>${escapeHtml(exam.content)}</p>
+          <p style="margin-top:8px;"><strong>備考：</strong>${escapeHtml(exam.note)}</p>
+        </article>
+      `)
+      .join("");
+
+    syncExamStatus();
+  }
+
+  function renderGallery() {
+    const wrap = document.getElementById("galleryGrid");
+    wrap.innerHTML = SITE_DATA.gallery
+      .map(item => `
+        <figure class="gallery-item">
+          <img src="${escapeHtml(item.src)}" alt="${escapeHtml(item.alt)}">
+          <figcaption class="gallery-caption">${escapeHtml(item.caption)}</figcaption>
+        </figure>
+      `)
+      .join("");
+  }
+
+  function renderLinks() {
+    const wrap = document.getElementById("linkList");
+    wrap.innerHTML = SITE_DATA.links
+      .map(link => `
+        <a class="link-button" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">
+          <div>
+            <strong>${escapeHtml(link.title)}</strong><br>
+            <span>${escapeHtml(link.description)}</span>
+          </div>
+          <div aria-hidden="true">↗</div>
+        </a>
+      `)
+      .join("");
+  }
+
+  renderNavigation();
+  renderHero();
+  renderPickup();
+  renderHome();
+  renderGreetings();
+  renderAnnouncements();
+  renderRules();
+  renderRanks();
+  renderDevelopment();
+  loadExamsFromJson();
+  renderGallery();
+  renderLinks();
+
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  function toggleScrollTopButton() {
+    if (!scrollTopBtn) return;
+    if (window.scrollY > 260) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  }
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  window.addEventListener("scroll", toggleScrollTopButton, { passive: true });
+  toggleScrollTopButton();
+</script>
 </body>
 </html>
