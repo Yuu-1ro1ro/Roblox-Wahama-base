@@ -1901,7 +1901,7 @@
     }
 
     SITE_DATA.exams = exams;
-    renderExams();
+    loadExamsFromJson();
   } catch (error) {
     console.error("試験情報の読み込みに失敗しました:", error);
 
